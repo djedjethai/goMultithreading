@@ -20,7 +20,7 @@ var (
 	// represente the boid position and is memory shared
 	// and advertize their position
 	boidMap [screenWidth + 1][screenHeight + 1]int
-	lock    = sync.Mutex{}
+	rwLock  = sync.RWMutex{}
 )
 
 type Game struct {
