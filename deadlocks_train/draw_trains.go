@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/djedjethai/multithreading/deadlocks_train/common"
+	// "github.com/djedjethai/multithreading/deadlocks_train/hierarchy"
 	"github.com/hajimehoshi/ebiten/v2"
 	"image/color"
 	"math"
