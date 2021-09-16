@@ -28,7 +28,6 @@ func lockIntersectionsInDistance(id, reserveStart, reserveEnd int, crossings []*
 		// in this situation the deadlock situation will be difficult to simulate
 		// let increase the risk by locking for longer time
 		time.Sleep(10 * time.Millisecond)
-
 	}
 }
 
@@ -45,8 +44,8 @@ func MoveTrain(train *common.Train, distance int, crossings []*common.Crossing) 
 			// unlock the mutex when the train passed the crossing
 			back := train.Front - train.TrainLength
 			if back == crossing.Position {
-				crossing.Intersection.LockedBy = -1
 				crossing.Intersection.Mutex.Unlock()
+				crossing.Intersection.LockedBy = -1
 			}
 		}
 		// sleep 30millisecond, otherwise the simulation will run too fast
